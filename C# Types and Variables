@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ders1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello world!");
+            //Value Types
+            int number1 = 2147483647;  //int değer aralığı  -2147483648 ile 2147483647
+            long number2 = -9223372036854775808; //bu ile 9223372036854775807 aralığında
+            short number3 = -32768; // 32767 ile -32768
+            byte number4 = 255; //0 - 255 aralığı
+            bool condition = true; //true veya false değerini tutar 
+            char character = 'A';
+            string city = "Ankara"; // string character dizisidir. city 6 karakterden oluşan bir dizi diyebiliriz
+            double number5 = 10.4; //ondalıklı sayıları tutar
+            decimal number6 = 10.4M; // double gibi yazamıyoruz sonuna büyük veya küçük m harf koymalıyız
+                                     //int için long neyse double için de decimal öyledir
+                                     //virgülden sonra double 15-16 değer tutarken decimal 28-29 tane değer tutabilir
+
+            // if (Days.Friday ==  )  enum ile fridayi sunday ile daha kolay değiştirebilriz
+            //if ("Friday")   magic string denilen ifade budur ve friday yerine sunday yazmak istesem her yerden tek tek değiştirmem gerekir
+
+            var number7 = 10; //var keywordü değişken değildir değişken tutmak için kullanılır
+            number7 = 'A'; // yukarda varın değerini integer atadığım için artık karakter de versem int değerini yazdırır yani 65 çıkar
+            // atadığımız değerin tipi neyse var ın da tipi o olur intse int charsa char 
+            Console.WriteLine("Number1 is {0}", number1);
+            Console.WriteLine("Number2 is {0}", number2);
+            Console.WriteLine("Number3 is {0}", number3);
+            Console.WriteLine("Number4 is {0}", number4);
+            Console.WriteLine("Condition is {0}", condition); //condition=şart
+            Console.WriteLine("Character is {0}", (int)character); //başına ()içine int yazınca ASCII karşılığını verdi
+            Console.WriteLine("Number5 is {0}", number5); //double 64bitlik veri tutabilir
+            Console.WriteLine("Number6 is {0}", number6);
+            Console.WriteLine((int)Days.Friday); // days in önüne () getirerek tip dönüşümü yapabiliriz 
+            // 4 yazdırdı çünkü days dizisinin 4.elemanı 
+            Console.WriteLine("Number7 is {0}", number7);
+
+            Console.ReadLine();
+        }
+    }
+    //string ile dizi yazarken (magic string) karşılaştırma yaparken gerekli elamanı bulmak için tekrar yazmak gerekiyor
+    //enum ile bu tek tek bir daha bir daha yazmamızı engelliyor, karşılaştırma yaparken vs
+    enum Days
+    {
+        Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+        // Monday=10, Tuesday,.. şeklinde yazarsam monday dizinin 10.elemanı olmuş olur ve öyle ilerler
+        //hepsine farklı değer vermek istersem hepsine tek tek =sayi yazabilirim
+    }
+
+
+}
